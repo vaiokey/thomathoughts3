@@ -7,11 +7,11 @@ assignees: tkeiyama
 
 ---
 
-**URL**
+### URL
 > Please paste the URL.
 
-**Describe the bug**
+## Describe the bug
 > Please write down what you did and what happened.
 
-**Additional Info**
+## Additional Info
 > Browser, Screenshots, etc.

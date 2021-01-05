@@ -10,8 +10,8 @@ assignees: tkeiyama
 Thanks for your idea!
 Please write some words for me.
 
-**Feature Title**
+## Feature Title
 > What kind of feature do you suggest me :')
 
-**Good Parts**
+## Good Parts
 > What does the suggestion improve?
