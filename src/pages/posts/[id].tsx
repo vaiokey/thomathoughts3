@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import {ReactElement, useEffect} from "react";
 import ReactMarkdown from "react-markdown";
 
@@ -29,6 +30,7 @@ export default function Post({postData}: PostProps): ReactElement {
 		[],
 	);
 
+	// rome-ignore lint/jsx-a11y/useValidAnchor
 	return <Layout home={true}>
 		<Head>
 			<title>
@@ -49,6 +51,18 @@ export default function Post({postData}: PostProps): ReactElement {
 				</ReactMarkdown>
 			</div>
 		</article>
+		<div className="flex flex-col">
+			<Link href={`https://github.com/tkeiyama/thomathoughts/blob/main/posts/${postData.id}/${postData.id}.md`}>
+				<a>
+					Edit this post on GitHub.
+				</a>
+			</Link>
+			<Link href="/">
+				<a>
+					Back to top
+				</a>
+			</Link>
+		</div>
 	</Layout>;
 }
 

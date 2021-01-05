@@ -57,13 +57,5 @@ export function Layout({children, home}: LayoutProps): ReactElement {
 		<main className="mt-5">
 			{children}
 		</main>
-		{home === true &&
-		<div>
-			<Link href="/">
-				<a>
-					Back to top
-				</a>
-			</Link>
-		</div>}
 	</div>;
 }
