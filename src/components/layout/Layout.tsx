@@ -30,7 +30,7 @@ export function Layout({children, home}: LayoutProps): ReactElement {
 			<meta name="description"
 			content="Learn how to build a personal website using Next.js" />
 			<meta property="og:image" content="/images/profile.jpg" />
-			<meta name="og:title" content={process.env.siteTitle} />
+			<meta name="og:title" content={process.env.SITE_TITLE} />
 			<meta name="twitter:card" content="summary_large_image" />
 		</Head>
 		<header className="flex items-center py-4">
