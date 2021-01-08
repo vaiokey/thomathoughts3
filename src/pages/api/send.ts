@@ -9,9 +9,9 @@ export default async function send(req: NextApiRequest, res: NextApiResponse) {
 	}
 	const {message} = req.body;
 
-	if(process.env.MY_EMAIL === undefined) {
-		res.status(500).send("The feedback message wasn't sent for some reasons.")
-		throw new Error('500: Server Error')
+	if (process.env.MY_EMAIL === undefined) {
+		res.status(500).send("The feedback message wasn't sent for some reasons.");
+		throw new Error("500: Server Error");
 	}
 
 	const content = {

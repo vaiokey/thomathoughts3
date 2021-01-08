@@ -24,5 +24,6 @@ export async function getPostData(id: string): Promise<PostData> {
 		contentHtml,
 		title: matterResult.data.title,
 		date: matterResult.data.date,
+		tags: matterResult.data.tags.split(","),
 	};
 }

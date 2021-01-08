@@ -23,7 +23,7 @@ export default function pages({allPostsData}: PagesProps): ReactElement {
 		</Head>
 		<section>
 			<ul className="pl-0">
-				{allPostsData.map(({id, date, title}) =>
+				{allPostsData.flatMap(({id, date, tags, title}) =>
 					<li className={clsx("list-none mt-10", "first:mt-0")} key={id}>
 						<Link href={`/posts/${id}`}>
 							<a className={clsx("text-black", "dark:text-white")}>
@@ -35,6 +35,13 @@ export default function pages({allPostsData}: PagesProps): ReactElement {
 								</time>
 							</a>
 						</Link>
+						<div>
+							{tags.flatMap((tag) =>
+								<span className="ml-5 first:ml-0">
+									{tag}
+								</span>
+							)}
+						</div>
 					</li>
 				)}
 			</ul>
