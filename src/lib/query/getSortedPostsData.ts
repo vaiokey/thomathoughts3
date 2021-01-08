@@ -18,6 +18,7 @@ export function getSortedPostsData(): Array<Post> {
 			id,
 			title: matterResult.data.title,
 			date: matterResult.data.date,
+			tags: matterResult.data.tags.split(","),
 		};
 	});
 	return allPostsData.sort((a, b) => {

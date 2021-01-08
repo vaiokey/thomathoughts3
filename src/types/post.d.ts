@@ -3,6 +3,7 @@ import {DateFormat} from "./date.d";
 export interface Post {
 	date: DateFormat;
 	id: string;
+	tags: Array<string>;
 	title: string;
 }
 

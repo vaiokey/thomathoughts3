@@ -45,6 +45,13 @@ export default function Post({postData}: PostProps): ReactElement {
 			<time dateTime={postData.date}>
 				{formatDate(postData.date)}
 			</time>
+			<div>
+							{postData.tags.flatMap((tag) =>
+								<span className="ml-5 first:ml-0">
+									{tag}
+								</span>
+							)}
+						</div>
 			<div className="my-12">
 				<ReactMarkdown allowDangerousHtml={true}>
 					{postData.contentHtml}
