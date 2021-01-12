@@ -17,8 +17,8 @@ It is because this approach is readlly good as the basic development style. As I
 
 ## How can I use TDD?
 
-Let me show you a simple example in TypeScript.
-Imagine when you are about to make the function to get the post data.
+Let me show you a simple example in TypeScript.  
+Imagine when you are about to make the function to get the post data.  
 I write type interfaces first.
 
 ```typescript
@@ -38,8 +38,8 @@ export interface PostData extends Post {
 }
 ```
 
-Let me explain what was going on these type interfaces.
-You can see I started to write a tiny type interface such as `DateFormat`, then I added it to the larger type interface named `Post`, then I combine it with `contentHtml` which the real post needs. This is kind of LEGO and very simple, right?
+Let me explain what was going on these type interfaces.  
+You can see I started to write a tiny type interface such as `DateFormat`, then I added it to the larger type interface named `Post`, then I combine it with `contentHtml` which the real post needs. This is kind of LEGO and very simple, right?  
 So the function looks like the below.
 
 ```typescript
@@ -51,8 +51,8 @@ function getPostData(): PostData {
 }
 ```
 
-That's it. Nothing else you do.
-If you need a type interface for parameters, you just make the interface named like `GetPostDataParams`. And if the return type become more complicated, you just combine `PostData` with others, then put it on to the return type.
+That's it. Nothing else you do.  
+If you need a type interface for parameters, you just make the interface named like `GetPostDataParams`. And if the return type become more complicated, you just combine `PostData` with others, then put it on to the return type.  
 TDD is pretty simple.
 
 ## What are Pros and Cons?
