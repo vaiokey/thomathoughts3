@@ -2,7 +2,6 @@ import fs from 'fs'
 import grayMatter from 'gray-matter'
 import path from 'path'
 import remark from 'remark'
-import remarkHtml from 'remark-html'
 
 import {PostData} from '../../types/post.d'
 
@@ -14,7 +13,7 @@ export async function getPostData (id: string): Promise<PostData> {
 
   const matterResult = grayMatter(fileContents)
 
-  const processedContent = await remark().use(remarkHtml).process(
+  const processedContent = await remark().process(
     matterResult.content,
   )
   const contentHtml = processedContent.toString()
