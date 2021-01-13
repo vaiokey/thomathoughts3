@@ -1,52 +1,64 @@
-import clsx from "clsx";
-import Head from "next/head";
-import Link from "next/link";
-import {ReactElement} from "react";
+import clsx from 'clsx'
+import Head from 'next/head'
+import Link from 'next/link'
+import {ReactElement} from 'react'
 
-import {Post} from "../types/post.d";
-import {formatDate} from "../lib/date/formatDate";
-import {getSortedPostsData} from "../lib/query";
-
-import {Layout} from "../components/layout";
+import {Layout} from '../components/layout'
+import {formatDate} from '../lib/date/formatDate'
+import {getSortedPostsData} from '../lib/query'
+import {Post} from '../types/post.d'
 
 export interface PagesProps {
-	allPostsData: Array<Post>;
+  allPostsData: Post[]
 }
 
-export default function pages({allPostsData}: PagesProps): ReactElement {
-	// rome-ignore lint/jsx-a11y/useValidAnchor
-	return <Layout>
-		<Head>
-			<title>
-				thomathoughts
-			</title>
-		</Head>
-		<section>
-			<ul className="pl-0">
-				{allPostsData.map(({id, date, title}) =>
-					<li className={clsx("list-none mt-10", "first:mt-0")} key={id}>
-						<Link href={`/posts/${id}`}>
-							<a className={clsx("text-black", "dark:text-white")}>
-								<h2>
-									{title}
-								</h2>
-								<time dateTime={date}>
-									{formatDate(date)}
-								</time>
-							</a>
-						</Link>
-					</li>
-				)}
-			</ul>
-		</section>
-	</Layout>;
+export default function Index ({allPostsData}: PagesProps): ReactElement {
+  return (
+    <Layout>
+      <Head>
+        <title>
+          thomathoughts
+        </title>
+      </Head>
+      <section>
+        <ul className="pl-0">
+          {allPostsData.flatMap(({date, id, tags, title}) =>
+            <li className={clsx('list-none mt-10', 'first:mt-0')} key={id}>
+              <Link href={`/posts/${id}`}>
+                {/* eslint-disable jsx-a11y/anchor-is-valid */}
+                <a className={clsx('text-black', 'dark:text-white')}>
+                  <h2>
+                    {title}
+                  </h2>
+                  <time dateTime={date}>
+                    {formatDate(date)}
+                  </time>
+                </a>
+              </Link>
+              <div>
+                {tags.flatMap((tag) =>
+                  <span className="ml-5 first:ml-0">
+                    {tag}
+                  </span>
+                )}
+              </div>
+            </li>
+          )}
+        </ul>
+      </section>
+    </Layout>
+  )
 }
 
-export async function getStaticProps() {
-	const allPostsData = getSortedPostsData();
-	return {
-		props: {
-			allPostsData,
-		},
-	};
+export async function getStaticProps (): Promise<{
+  props: {
+    allPostsData: Post[]
+  }
+}> {
+  const allPostsData = getSortedPostsData()
+  return {
+    props: {
+      allPostsData,
+    },
+  }
 }

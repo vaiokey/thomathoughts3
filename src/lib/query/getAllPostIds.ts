@@ -1,21 +1,21 @@
-import {glob} from "../deps/glob";
+import {glob} from '../deps/glob'
 
 export interface GetAllPostIdsReturn {
-	params: {
-		id: string;
-	};
+  params: {
+    id: string
+  }
 }
 
-export function getAllPostIds(): Array<GetAllPostIdsReturn> {
-	const fileNames = glob("posts/**/*.md").flatMap((file: string) => {
-		const slashLastIndex = file.lastIndexOf("/");
-		return file.slice(slashLastIndex + 1);
-	});
-	return fileNames.map((fileName) => {
-		return {
-			params: {
-				id: fileName.replace(/\.md$/, ""),
-			},
-		};
-	});
+export function getAllPostIds (): GetAllPostIdsReturn[] {
+  const fileNames = glob('posts/**/*.md').flatMap((file: string) => {
+    const slashLastIndex = file.lastIndexOf('/')
+    return file.slice(slashLastIndex + 1)
+  })
+  return fileNames.map((fileName) => {
+    return {
+      params: {
+        id: fileName.replace(/\.md$/, ''),
+      },
+    }
+  })
 }

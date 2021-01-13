@@ -1,6 +1,7 @@
 ---
 title: "Typed-Driven Development"
 date: "2021-01-04"
+tags: "architecture,design,tdd"
 ---
 
 ## What is it?

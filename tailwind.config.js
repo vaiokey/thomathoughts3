@@ -26,7 +26,8 @@ module.exports = {
 	},
 	variants: {
 		extend: {
-			margin:['first']
+			margin:['first'],
+			outline: ['dark']
 		},
 	},
 	plugins: [

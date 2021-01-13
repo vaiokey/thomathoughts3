@@ -1,11 +1,13 @@
-import {AppProps} from "next/app";
-import {ThemeProvider} from "next-themes";
-import {ReactElement} from "react";
-import "../styles/global.css";
+import '../styles/global.css'
 
-export default function _app({Component, pageProps}: AppProps): ReactElement {
-	// rome-ignore lint/jsx/noPropSpreading
-	return <ThemeProvider attribute="class">
-		<Component {...pageProps} />
-	</ThemeProvider>;
+import {AppProps} from 'next/app'
+import {ThemeProvider} from 'next-themes'
+import {ReactElement} from 'react'
+
+export default function App ({Component, pageProps}: AppProps): ReactElement {
+  return (
+    <ThemeProvider attribute="class">
+      <Component {...pageProps} />
+    </ThemeProvider>
+  )
 }
