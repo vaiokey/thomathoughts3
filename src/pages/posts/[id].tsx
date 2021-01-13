@@ -30,7 +30,6 @@ export default function Post ({postData}: PostProps): ReactElement {
     [],
   )
 
-  // rome-ignore lint/jsx-a11y/useValidAnchor
   return (
     <Layout home>
       <Head>

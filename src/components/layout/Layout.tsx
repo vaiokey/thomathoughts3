@@ -23,7 +23,6 @@ export function Layout ({children, home}: LayoutProps): ReactElement {
     }
   }
 
-  // rome-ignore lint/jsx-a11y/useValidAnchor
   return (
     <div className="mx-auto w-2/5">
       <Head>
