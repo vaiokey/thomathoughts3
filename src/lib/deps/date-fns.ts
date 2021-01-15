@@ -1,8 +1,8 @@
-import {format as _format, parseISO as _parseISO} from 'date-fns'
+import { format as _format, parseISO as _parseISO } from 'date-fns'
 
-import {DateFormat} from '../../types/date.d'
+import { DateFormat } from '../../types/date.d'
 
-export function format (
+export function format(
   date: Date,
   format: string,
   options?: {
@@ -16,7 +16,7 @@ export function format (
   return _format(date, format, options)
 }
 
-export function parseISO (
+export function parseISO(
   argument: DateFormat,
   options?: {
     additionalDigits?: 0 | 1 | 2 | undefined
