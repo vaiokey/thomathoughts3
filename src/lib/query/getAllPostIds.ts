@@ -1,4 +1,4 @@
-import {glob} from '../deps/glob'
+import { glob } from '../deps/glob'
 
 export interface GetAllPostIdsReturn {
   params: {
@@ -6,7 +6,7 @@ export interface GetAllPostIdsReturn {
   }
 }
 
-export function getAllPostIds (): GetAllPostIdsReturn[] {
+export function getAllPostIds(): GetAllPostIdsReturn[] {
   const fileNames = glob('posts/**/*.md').flatMap((file: string) => {
     const slashLastIndex = file.lastIndexOf('/')
     return file.slice(slashLastIndex + 1)

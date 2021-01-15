@@ -2,22 +2,19 @@ import clsx from 'clsx'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import {useTheme} from 'next-themes'
-import {ReactElement, useEffect, useState} from 'react'
+import { useTheme } from 'next-themes'
+import { ReactElement, useEffect, useState } from 'react'
 
-import {LayoutProps} from './Layout.interfaces'
+import { LayoutProps } from './Layout.interfaces'
 
-export function Layout ({children, home}: LayoutProps): ReactElement {
+export function Layout({ children, home }: LayoutProps): ReactElement {
   const [isMounted, setIsMounted] = useState(false)
-  const {setTheme, theme} = useTheme()
-  useEffect(
-    () => {
-      setIsMounted(true)
-    },
-    [],
-  )
+  const { setTheme, theme } = useTheme()
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
-  function switchTheme (): void {
+  function switchTheme(): void {
     if (isMounted) {
       setTheme(theme === 'light' ? 'dark' : 'light')
     }
@@ -38,14 +35,13 @@ export function Layout ({children, home}: LayoutProps): ReactElement {
       <header className="flex items-center py-4">
         <Link href="/">
           {/* eslint-disable jsx-a11y/anchor-is-valid */}
-          <a className={clsx(
-            'flex-grow text-black hover:no-underline',
-            'dark:text-white',
-          )}
+          <a
+            className={clsx(
+              'flex-grow text-black hover:no-underline',
+              'dark:text-white',
+            )}
           >
-            <h1 className="text-3xl">
-              Thomathoughts
-            </h1>
+            <h1 className="text-3xl">Thomathoughts</h1>
           </a>
         </Link>
         <button
@@ -56,15 +52,15 @@ export function Layout ({children, home}: LayoutProps): ReactElement {
         >
           <Image
             alt="The theme change button"
-            src={`/images/themeSwitch/${theme === 'light' ? 'sun' : 'moon'}.png`}
+            src={`/images/themeSwitch/${
+              theme === 'light' ? 'sun' : 'moon'
+            }.png`}
             width={15}
             height={15}
           />
         </button>
       </header>
-      <main className="mt-5">
-        {children}
-      </main>
+      <main className="mt-5">{children}</main>
     </div>
   )
 }

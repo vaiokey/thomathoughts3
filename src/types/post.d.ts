@@ -1,4 +1,4 @@
-import {DateFormat} from './date.d'
+import { DateFormat } from './date.d'
 
 export interface Post {
   date: DateFormat

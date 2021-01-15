@@ -10,18 +10,21 @@ import Document, {
 import { ReactElement } from 'react'
 
 export default class NextDocument extends Document {
-  static async getInitialProps (ctx: DocumentContext): Promise<DocumentInitialProps> {
+  static async getInitialProps(
+    ctx: DocumentContext,
+  ): Promise<DocumentInitialProps> {
     const initialProps = await Document.getInitialProps(ctx)
-    return {...initialProps}
+    return { ...initialProps }
   }
 
-  render (): ReactElement {
+  render(): ReactElement {
     return (
       <Html>
         <Head />
-        <body className={clsx(
-          'bg-white text-black dark:bg-dark-not-black dark:text-white',
-        )}
+        <body
+          className={clsx(
+            'text-black dark:text-white dark:bg-dark-not-black bg-white',
+          )}
         >
           <Main />
           <NextScript />
