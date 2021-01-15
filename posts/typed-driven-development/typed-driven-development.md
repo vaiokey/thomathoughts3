@@ -1,7 +1,7 @@
 ---
-title: "Typed-Driven Development"
-date: "2021-01-04"
-tags: "architecture,design,tdd"
+title: 'Typed-Driven Development'
+date: '2021-01-04'
+tags: 'architecture,design,tdd'
 ---
 
 ## What is it?
@@ -23,19 +23,19 @@ Imagine when you are about to make the function to get the post data.
 I write type interfaces first.
 
 ```typescript
-export type DateFormat = `${string}/${string}/${string}`;
+export type DateFormat = `${string}/${string}/${string}`
 
 export interface Post {
-  date: DateFormat;
-  id: string;
-  title: string;
+  date: DateFormat
+  id: string
+  title: string
 }
 
 export interface PostData extends Post {
   /*
    * HTML elements of the content.
    */
-  contentHtml: string;
+  contentHtml: string
 }
 ```
 
@@ -44,11 +44,11 @@ You can see I started to write a tiny type interface such as `DateFormat`, then 
 So the function looks like the below.
 
 ```typescript
-import { PostData } from "./post.d";
+import { PostData } from './post.d'
 
 function getPostData(): PostData {
   // some implementations
-  return postData;
+  return postData
 }
 ```
 

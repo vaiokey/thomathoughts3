@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ReactElement, useEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
 
+import { CodeBlock } from '../../components/codeBlock'
 import { Layout } from '../../components/layout'
 import { formatDate } from '../../lib/date'
 import {
@@ -45,7 +46,7 @@ export default function Post({ postData }: PostProps): ReactElement {
           ))}
         </div>
         <div className="my-12">
-          <ReactMarkdown allowDangerousHtml>
+          <ReactMarkdown allowDangerousHtml renderers={{ code: CodeBlock }}>
             {postData.contentHtml}
           </ReactMarkdown>
         </div>

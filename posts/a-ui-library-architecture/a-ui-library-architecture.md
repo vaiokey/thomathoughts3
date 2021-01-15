@@ -1,7 +1,7 @@
 ---
-title: "A UI library architecture"
-date: "2021-01-01"
-tags: "architecture,design,ui"
+title: 'A UI library architecture'
+date: '2021-01-01'
+tags: 'architecture,design,ui'
 ---
 
 ## Introduction
@@ -20,9 +20,9 @@ I guess here are the decent things when you make a UI component.
 
 I got strongly inspired by [React Spectrum](https://react-spectrum.adobe.com/react-spectrum/).
 
-In addition to it, I updated a few things. My thought is that almost all of those things should be split into a part to make ONE component. Let me explain the `ALMOST` part. The Styles part is evenly split though, but in React, HTML Elements and logics have to be combined for readable code. You might not need the Styles part if you don't directly use CSS such as Tailwind CSS(*1).
+In addition to it, I updated a few things. My thought is that almost all of those things should be split into a part to make ONE component. Let me explain the `ALMOST` part. The Styles part is evenly split though, but in React, HTML Elements and logics have to be combined for readable code. You might not need the Styles part if you don't directly use CSS such as Tailwind CSS(\*1).
 
-*1 Technically, Tailwind CSS uses CSS.
+\*1 Technically, Tailwind CSS uses CSS.
 
 ## The folder structure
 
@@ -37,9 +37,9 @@ The UI library's name is `stdui` here for example.
 |- configs
 |
 |- packages
-   |- @stdui-styles/switch
-   |- @stdui-types/switch
-   |- @stdui-react/switch
+|- @stdui-styles/switch
+|- @stdui-types/switch
+|- @stdui-react/switch
 ```
 
 I'm gonna write how dependencies are going on each package.
