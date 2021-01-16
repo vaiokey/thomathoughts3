@@ -13,13 +13,13 @@ export function getSortedPostsData(): Post[] {
 
       const fileContents = fs.readFileSync(fileName, 'utf8')
 
-      const matterResult = grayMatter(fileContents)
+      const { data } = grayMatter(fileContents)
 
       return {
         id,
-        title: matterResult.data.title,
-        date: matterResult.data.date,
-        tags: matterResult.data.tags.split(','),
+        title: data.title,
+        date: data.date,
+        tags: data.tags.split(','),
       }
     },
   )

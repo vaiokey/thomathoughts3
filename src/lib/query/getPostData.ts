@@ -11,16 +11,16 @@ export async function getPostData(id: string): Promise<PostData> {
   const fullPath = path.join(postsDirectory, `${id}/${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 
-  const matterResult = grayMatter(fileContents)
+  const { content, data } = grayMatter(fileContents)
 
-  const processedContent = await remark().process(matterResult.content)
+  const processedContent = await remark().process(content)
   const contentHtml = processedContent.toString()
 
   return {
     id,
     contentHtml,
-    title: matterResult.data.title,
-    date: matterResult.data.date,
-    tags: matterResult.data.tags.split(','),
+    title: data.title,
+    date: data.date,
+    tags: data.tags.split(','),
   }
 }

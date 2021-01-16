@@ -48,8 +48,7 @@ ${feedback}`
       <div>
         <h2>OOPS! Page is not found ;(</h2>
         <p>
-          If you think this page should be existed, please send an feedback to
-          let me know.
+          If you think this page should be existed, please send me an feedback.
         </p>
         <p>Thanks :&apos;)</p>
         <form onSubmit={handleOnSubmit}>
