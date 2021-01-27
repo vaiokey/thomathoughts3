@@ -42,7 +42,9 @@ export default function Post({ postData }: PostProps): ReactElement {
         <time dateTime={postData.date}>{formatDate(postData.date)}</time>
         <div>
           {postData.tags.flatMap((tag) => (
-            <span className="first:ml-0 ml-5">{tag}</span>
+            <span className="first:ml-0 ml-5" key={tag}>
+              {tag}
+            </span>
           ))}
         </div>
         <div className="my-12">

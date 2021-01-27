@@ -31,7 +31,9 @@ export default function Index({ allPostsData }: PagesProps): ReactElement {
               </Link>
               <div>
                 {tags.flatMap((tag) => (
-                  <span className="first:ml-0 ml-5">{tag}</span>
+                  <span className="first:ml-0 ml-5" key={tag}>
+                    {tag}
+                  </span>
                 ))}
               </div>
             </li>
