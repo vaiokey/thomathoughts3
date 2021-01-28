@@ -12,7 +12,7 @@ Typed-driven development(abbreviated TDD in this post) is using types to manage 
 
 IMO, this approach itself is not fillable to make the complicatedly real world because TDD doesn't have some smart stuff which other architectures have. The clean architecture for example, It separates logic and presenter to make the responsibilities clean. Thinking about only TDD will never bring it into the architecture. As that said, this approach is completely fine when you combine TDD with some stuff which you brought from other architectures.
 
-## Why do you recommend TDD?
+## Why do I recommend TDD?
 
 It is because this approach is readlly good as the basic development style. As I write on the title, TDD is just Typed `DRIVEN` development. So you just use this at the first when you make some things like a feature or a function.
 
