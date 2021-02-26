@@ -1,12 +1,12 @@
 ---
-title: 'Typed-Driven Development'
+title: 'Type-Driven Development'
 date: '2021-01-04'
 tags: 'architecture,design,tdd'
 ---
 
 ## What is it?
 
-Typed-driven development(abbreviated TDD in this post) is using types to manage things. A type can be everything such as the domain used in Domain-Driven Development(abbreviated DDD).
+Type-driven development(abbreviated TDD in this post) is using types to manage things. A type can be everything such as the domain used in Domain-Driven Development(abbreviated DDD).
 
 ## Is TDD good for a large scale application?
 
@@ -14,7 +14,7 @@ IMO, this approach itself is not fillable to make the complicatedly real world b
 
 ## Why do I recommend TDD?
 
-It is because this approach is readlly good as the basic development style. As I write on the title, TDD is just Typed `DRIVEN` development. So you just use this at the first when you make some things like a feature or a function.
+It is because this approach is readlly good as the basic development style. As I write on the title, TDD is just Type `DRIVEN` development. So you just use this at the first when you make some things like a feature or a function.
 
 ## How can I use TDD?
 
